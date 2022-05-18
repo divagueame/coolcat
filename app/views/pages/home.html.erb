@@ -1,2 +1,20 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+<% if current_user %>
+    You're auhtenticated. <%= current_user.email %>
+    <p>You are a <%= current_user.role %></p>
+    <% if current_user.admin? %>
+        <h5 class="bg-slate-500">Admin mode active</h5>
+        <p>User Count: <%= User.count %></p>
+        
+        <% User.all.each do |user|%>
+            <%= user.email %><br>
+        <% end %>
+    <% end %>
+    <%= link_to 'Sign out', destroy_user_session_path, 'data-turbo-method': :delete  %>
+<% else %>
+    Not signed in
+    <%= link_to 'Sign up', new_user_registration_path %>
+    <br>
+    <%= link_to 'Login', new_user_session_path %>
+<% end %>
