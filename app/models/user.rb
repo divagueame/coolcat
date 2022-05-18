@@ -7,6 +7,8 @@ class User < ApplicationRecord
   enum role: [:user, :moderator, :admin]
   after_initialize :set_default_role, :if => :new_record?
 
+  has_one_attached :avatar
+  
   def set_default_role
     self.role ||= :user
   end 

@@ -1,15 +1,26 @@
-<h1>Pages#home</h1>
+<div class="container">
+<h1 class="btnchi">Pages#home</h1>
+<h2>Pages#home</h2>
+<h3>Pages#home</h3>
 <p>Find me in app/views/pages/home.html.erb</p>
 <% if current_user %>
     You're auhtenticated. <%= current_user.email %>
     <p>You are a <%= current_user.role %></p>
+    
     <% if current_user.admin? %>
         <h5 class="bg-slate-500">Admin mode active</h5>
         <p>User Count: <%= User.count %></p>
         
-        <% User.all.each do |user|%>
-            <%= user.email %><br>
-        <% end %>
+        <div class="bg-slate-100">
+            <% User.all.each do |user|%>
+                <%= user.email %>
+                <% if (user.avatar).present? %>
+                    <%= image_tag user.avatar, width: 120 %>
+                <% end %>
+            <br>
+            <% end %>
+            <br>
+        </div>
     <% end %>
     <%= link_to 'Sign out', destroy_user_session_path, 'data-turbo-method': :delete  %>
 <% else %>
@@ -18,3 +29,4 @@
     <br>
     <%= link_to 'Login', new_user_session_path %>
 <% end %>
+</div>
