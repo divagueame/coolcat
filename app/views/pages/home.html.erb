@@ -15,7 +15,7 @@
             <% User.all.each do |user|%>
                 <%= user.email %>
                 <% if (user.avatar).present? %>
-                    <%= image_tag user.avatar, width: 120 %>
+                    <%= image_tag user.avatar.variant(:thumb) %>
                 <% end %>
             <br>
             <% end %>
