@@ -11,6 +11,9 @@
   </head>
 
   <body class="bg-green-400">
-    <%= yield %>
+    <%= render 'partials/header' %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

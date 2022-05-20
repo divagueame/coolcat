@@ -7,7 +7,7 @@ kitty:
 
 admin:
   id: 2
-  email: 'admin@admin.com'  
+  email: 'admin@admin.com'
   role: :admin
 
 chiki: 
