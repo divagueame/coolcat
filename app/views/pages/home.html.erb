@@ -7,7 +7,9 @@
     You're auhtenticated. <%= current_user.email %>
     <p>You are a <%= current_user.role %></p>
     
+    <%# Admin Panel %>
     <% if current_user.admin? %>
+        <div id="admin-panel">
         <h5 class="bg-slate-500">Admin mode active</h5>
         <p>User Count: <%= User.count %></p>
         
@@ -22,6 +24,7 @@
             <br>
         </div>
     <% end %>
+        </div>
     <%= link_to 'Sign out', destroy_user_session_path, 'data-turbo-method': :delete  %>
 <% else %>
     Not signed in
