@@ -3,6 +3,7 @@ require "test_helper"
 class CatsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @cat = cats(:Lupy)
+    sign_in users(:kitty)
   end
 
   test "should get index" do
@@ -23,8 +24,7 @@ class CatsControllerTest < ActionDispatch::IntegrationTest
     assert_difference("Cat.count") do
       post cats_path, params: { 
         cat: {
-          name: 'Chuki',
-          user_id: users(:kitty).id
+          name: 'Chuki'
         }
       }
     end
@@ -46,8 +46,7 @@ class CatsControllerTest < ActionDispatch::IntegrationTest
   test "should update cat" do
     patch cat_url(@cat), params: {
       cat: {
-        name: 'Chuki',
-        user_id: users(:kitty).id
+        name: 'Chuki'
       }
     }
     assert_redirected_to cat_url(@cat)

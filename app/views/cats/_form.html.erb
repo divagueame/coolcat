@@ -1,4 +1,6 @@
 <%= form_with(model: cat) do |form| %>
+Current user: <%= current_user.id %>
+
   <% if cat.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(cat.errors.count, "error") %> prohibited this cat from being saved:</h2>
@@ -10,6 +12,11 @@
       </ul>
     </div>
   <% end %>
+
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
 
   <div>
     <%= form.submit %>

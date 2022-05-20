@@ -12,7 +12,7 @@ class CatsController < ApplicationController
 
   # GET /cats/new
   def new
-    @cat = Cat.new
+    @cat = Cat.new(user_id: current_user.id)
   end
 
   # GET /cats/1/edit
@@ -22,7 +22,7 @@ class CatsController < ApplicationController
   # POST /cats or /cats.json
   def create
     @cat = Cat.new(cat_params)
-
+    @cat.user_id = current_user.id
     respond_to do |format|
       if @cat.save
         format.html { redirect_to cat_url(@cat), notice: "Cat was successfully created." }
