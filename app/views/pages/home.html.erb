@@ -1,17 +1,10 @@
-
-    <% if current_user %>
-        You're auhtenticated. <span id="user_email"><%= current_user.email %></span>
-        <p>You are a <%= current_user.role %></p>
-        
-        <%# Admin Panel %>
-        <% if current_user.admin? %>
-                <%= render 'partials/admin_panel' %> 
-        <% end %>
-            </div>
-        <%= link_to 'Sign out', destroy_user_session_path, 'data-turbo-method': :delete  %>
-    <% else %>
-        Not signed in
-        <%= link_to 'Sign up', new_user_registration_path %>
-        <br>
-        <%= link_to 'Login', new_user_session_path %>
-    <% end %>
+<% if current_user %>
+  <%# Admin Panel %>
+  <% if current_user.admin? %>
+    <%= render 'partials/admin_panel' %>
+  <% else %>
+    Regular user
+  <% end %>
+<% else %>
+  NO SIGNED IN
+<% end %>

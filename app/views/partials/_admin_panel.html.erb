@@ -1,15 +1,14 @@
-
-            <div id="admin-panel">
-            <h5 class="bg-slate-500">Admin mode active</h5>
-            <p>User Count: <%= User.count %></p>
-            
-            <div class="bg-slate-100">
-                <% User.all.each do |user|%>
-                    <%= user.email %>
-                    <% if (user.avatar).present? %>
-                        <%= image_tag user.avatar.variant(:thumb) %>
-                    <% end %>
-                <br>
-                <% end %>
-                <br>
-        </div>
+<div id="admin-panel">
+  <h5 class="bg-slate-500">Admin mode active || <%= current_user.role %></h5>
+  <p>User Count: <%= User.count %></p>
+  <div class="bg-slate-100">
+    <% User.all.each do |user|%>
+      <%= user.email %>
+      <% if (user.avatar).present? %>
+        <%= image_tag user.avatar.variant(:thumb) %>
+      <% end %>
+      <br>
+    <% end %>
+    <br>
+  </div>
+</div>
