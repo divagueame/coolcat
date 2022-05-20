@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+Lupy:
+  name: Lupy
+  user_id: 1
+
+Tati:
+  name: Tati
+  user_id: 1
+
+Poli:
+  name: Poli
+  user_id: 3

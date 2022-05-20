@@ -11,6 +11,8 @@ class User < ApplicationRecord
     attachable.variant :thumb, resize_to_limit: [100, 100]
   end
   
+  has_many :cats, dependent: :destroy
+
   def set_default_role
     self.role ||= :user
   end 

@@ -1,13 +1,16 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 kitty: 
+  id: 1
   email: 'kitty@kitty.com'
   role: user
 
 admin:
+  id: 2
   email: 'admin@admin.com'  
   role: :admin
-#
+
 chiki: 
+  id: 3
   email: 'chiki@chiki.com'
   role: user
