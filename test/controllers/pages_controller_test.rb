@@ -16,7 +16,7 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     sign_in users(:admin)
     get pages_home_url
     assert_response :success
-
+    
     assert_select '#admin-panel', 1
     
   end
@@ -26,6 +26,15 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     
     assert_select '#admin-panel', 0
+    assert_select '#user_email', 'kitty@kitty.com'
   end
-
+  
+  test "Logged out users don't show username" do
+    sign_out users(:kitty)
+    get pages_home_url
+    assert_response :success
+    assert_select '#user_email', 0
+    
+  end
+  
 end
