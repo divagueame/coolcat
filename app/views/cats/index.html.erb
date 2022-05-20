@@ -1,14 +1,15 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Cats</h1>
+<h1>Cats b!</h1>
 
 <div id="cats">
   <% @cats.each do |cat| %>
     <%= render cat %>
-    <p>
+    <p class="hidden">
       <%= link_to "Show this cat", cat %>
     </p>
   <% end %>
 </div>
-
+<% if current_user then%>
 <%= link_to "New cat", new_cat_path %>
+<% end %>
