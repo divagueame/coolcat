@@ -1,6 +1,11 @@
 <% if current_user %>
+  <% if current_user.cats.count==0 %>
     <%= link_to 'Add your first kitty', new_cat_path %>
-    Regular user 
+  <% else %>
+    <% current_user.cats.each do |cat| %>
+      <%= render cat %>
+    <% end %>
+  <% end %>
 <% else %>
   NO SIGNED IN
 <% end %>
