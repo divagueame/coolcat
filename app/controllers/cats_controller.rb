@@ -1,6 +1,6 @@
 class CatsController < ApplicationController
   before_action :set_cat, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: %i[ index ]
+  before_action :authenticate_user!, except: %i[ index show ]
 
   # GET /cats or /cats.json
   def index
