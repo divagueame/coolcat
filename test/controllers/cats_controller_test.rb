@@ -31,10 +31,6 @@ class CatsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to new_user_session_path
   end
 
-
- 
-
-
   test "should create cat" do
     assert_difference("Cat.count") do
       post cats_path, params: { 
@@ -47,6 +43,21 @@ class CatsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to cat_url(Cat.last)
     assert_equal flash[:notice], 'Cat was successfully created.'
   end
+
+  # test "should create cat and upload a picture" do
+  #   assert_difference("Cat.count") do
+  #     post cats_path, params: { 
+  #       cat: {
+  #         name: 'Chuki',
+  #         # imagesavatar: fixture_file_upload("david.png", "image/png")
+  #       }
+  #     }
+  #   end
+
+  #   assert_redirected_to cat_url(Cat.last)
+  #   assert_equal flash[:notice], 'Cat was successfully created.'
+  # end
+
 
   test "should show cat" do
     get cat_url(@cat)
