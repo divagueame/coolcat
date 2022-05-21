@@ -18,6 +18,9 @@ Current user: <%= current_user.id %>
     <%= form.text_field :name %>
   </div>
 
+
+    <%= form.file_field :images, multiple: true %>
+
   <div>
     <%= form.submit %>
   </div>

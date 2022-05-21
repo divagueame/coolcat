@@ -2,6 +2,16 @@
     <%= cat.name %><br>
     Belongs to: 
     <%= User.find(cat.user_id).email %>
-    <br><br>
 
+
+
+    <% if cat.images.attached? %> ATTACHED YES
+    <% cat.images.each  do |image|%>
+            <%= image_tag image %> 
+        
+    <% end %>
+    <% else %> attached no
+<% end %>
+
+    <br><br>
 </div>
