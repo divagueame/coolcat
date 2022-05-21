@@ -44,19 +44,42 @@ class CatsControllerTest < ActionDispatch::IntegrationTest
     assert_equal flash[:notice], 'Cat was successfully created.'
   end
 
-  # test "should create cat and upload a picture" do
-  #   assert_difference("Cat.count") do
-  #     post cats_path, params: { 
-  #       cat: {
-  #         name: 'Chuki',
-  #         # imagesavatar: fixture_file_upload("david.png", "image/png")
-  #       }
-  #     }
-  #   end
+  test "should create cat and upload a picture" do
+    assert_difference("Cat.count") do
+      post cats_path, params: { 
+        cat: {
+          name: 'Chuki',
+          images: fixture_file_upload("test_cat.jpg", "image/jpeg")
+        }
+      }
+    end
 
-  #   assert_redirected_to cat_url(Cat.last)
-  #   assert_equal flash[:notice], 'Cat was successfully created.'
-  # end
+    assert_redirected_to cat_url(Cat.last)
+    assert_equal flash[:notice], 'Cat was successfully created.'
+
+    last_cat = Cat.order(:created_at).last
+    assert last_cat.images.attached?
+  end
+
+
+  test "should create cat and without a picture" do
+    assert_difference("Cat.count") do
+      post cats_path, params: { 
+        cat: {
+          name: 'Chuki'
+        }
+      }
+    end
+
+    assert_redirected_to cat_url(Cat.last)
+    assert_equal flash[:notice], 'Cat was successfully created.'
+
+    last_cat = Cat.order(:created_at).last
+    assert_not last_cat.images.attached?
+  end
+
+
+
 
 
   test "should show cat" do
