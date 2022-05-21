@@ -27,10 +27,10 @@ class CatsController < ApplicationController
     respond_to do |format|
       if @cat.save
         format.html { redirect_to cat_url(@cat), notice: "Cat was successfully created." }
-        format.json { render :show, status: :created, location: @cat }
+        # format.json { render :show, status: :created, location: @cat }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @cat.errors, status: :unprocessable_entity }
+        # format.json { render json: @cat.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -40,10 +40,10 @@ class CatsController < ApplicationController
     respond_to do |format|
       if @cat.update(cat_params)
         format.html { redirect_to cat_url(@cat), notice: "Cat was successfully updated." }
-        format.json { render :show, status: :ok, location: @cat }
+        # format.json { render :show, status: :ok, location: @cat }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @cat.errors, status: :unprocessable_entity }
+        # format.json { render json: @cat.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -54,7 +54,7 @@ class CatsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to cats_url, notice: "Cat was successfully destroyed." }
-      format.json { head :no_content }
+      # format.json { head :no_content }
     end
   end
 

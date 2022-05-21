@@ -1,17 +1,12 @@
 <div id="<%= dom_id cat %>">
-    <%= cat.name %><br>
-    Belongs to: 
-    <%= User.find(cat.user_id).email %>
-
-
-
-    <% if cat.images.attached? %> ATTACHED YES
-    <% cat.images.each  do |image|%>
-            <%= image_tag image %> 
-        
+  <% if cat.images.attached? %>
+    <% cat.images.each_with_index  do |image, i|%>
+      <% if(i==0)then %>
+        <%= image_tag image.variant(:basic), :class=>"rounded-xl"%>
+      <%end%>
     <% end %>
-    <% else %> attached no
-<% end %>
-
-    <br><br>
+  <% end %>
+  <%= cat.name %><br>
+  Belongs to: 
+  <%= User.find(cat.user_id).email %>
 </div>
