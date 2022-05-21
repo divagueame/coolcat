@@ -1,10 +1,11 @@
 <% if current_user %>
-  <%# Admin Panel %>
-  <% if current_user.admin? %>
-    <%= render 'partials/admin_panel' %>
-  <% else %>
-    Regular user
-  <% end %>
+    <%= link_to 'Add your first kitty', new_cat_path %>
+    Regular user 
 <% else %>
   NO SIGNED IN
+<% end %>
+
+
+<% if is_admin? then %>
+    <%= render 'partials/admin_panel' %>
 <% end %>

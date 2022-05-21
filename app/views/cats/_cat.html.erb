@@ -1,3 +1,7 @@
 <div id="<%= dom_id cat %>">
-    <%= cat.name %>
+    <%= cat.name %><br>
+    Belongs to: 
+    <%= User.find(cat.user_id).email %>
+    <br><br>
+
 </div>
