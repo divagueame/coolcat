@@ -49,16 +49,17 @@ class CatsControllerTest < ActionDispatch::IntegrationTest
       post cats_path, params: { 
         cat: {
           name: 'Chuki',
-          images: fixture_file_upload("test_cat.jpg", "image/jpeg")
+          images: [fixture_file_upload("test_cat.jpg", "image/jpeg")]
         }
       }
     end
-
+    
     assert_redirected_to cat_url(Cat.last)
     assert_equal flash[:notice], 'Cat was successfully created.'
-
+    
     last_cat = Cat.order(:created_at).last
     assert last_cat.images.attached?
+    
   end
 
 

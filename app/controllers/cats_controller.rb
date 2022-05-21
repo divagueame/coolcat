@@ -26,11 +26,9 @@ class CatsController < ApplicationController
     @cat.user_id = current_user.id
     respond_to do |format|
       if @cat.save
-        format.html { redirect_to cat_url(@cat), notice: "Cat was successfully created." }
-        # format.json { render :show, status: :created, location: @cat }
+        format.html { redirect_to cat_url(@cat), notice: "Cat was successfully created." } 
       else
-        format.html { render :new, status: :unprocessable_entity }
-        # format.json { render json: @cat.errors, status: :unprocessable_entity }
+        format.html { render :new, status: :unprocessable_entity } 
       end
     end
   end
@@ -39,11 +37,9 @@ class CatsController < ApplicationController
   def update
     respond_to do |format|
       if @cat.update(cat_params)
-        format.html { redirect_to cat_url(@cat), notice: "Cat was successfully updated." }
-        # format.json { render :show, status: :ok, location: @cat }
+        format.html { redirect_to cat_url(@cat), notice: "Cat was successfully updated." } 
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        # format.json { render json: @cat.errors, status: :unprocessable_entity }
+        format.html { render :edit, status: :unprocessable_entity } 
       end
     end
   end
@@ -53,19 +49,16 @@ class CatsController < ApplicationController
     @cat.destroy
 
     respond_to do |format|
-      format.html { redirect_to cats_url, notice: "Cat was successfully destroyed." }
-      # format.json { head :no_content }
+      format.html { redirect_to cats_url, notice: "Cat was successfully destroyed." } 
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_cat
       @cat = Cat.find(params[:id])
     end
-
-    # Only allow a list of trusted parameters through.
+ 
     def cat_params
-      params.require(:cat).permit(:name, :user_id, :images)
+      params.require(:cat).permit(:name, :user_id, images: [])
     end
 end

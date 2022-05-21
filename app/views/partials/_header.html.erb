@@ -1,5 +1,7 @@
-<div class="bg-slate-800 text-slate-100 py-1 px-4 mb-2 flex gap-1">
-  <h1>CoolCat</h1>
+<div class="bg-slate-800 text-slate-100 py-1 px-4 flex gap-1">
+  <%= link_to :root do %>
+    <h1>CoolCat</h1>
+  <% end %>
   <div class="ml-auto">
   <% if current_user %>
     <p><%= current_user.role %>: <span id="user_email"><%= current_user.email %></span></p>

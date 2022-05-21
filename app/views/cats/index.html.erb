@@ -1,15 +1,10 @@
 <p style="color: green"><%= notice %></p>
 <h1>Cats</h1>
-<div id="cats" class="grid grid-cols-4 gap-4"
-> 
-
-    <% @cats.each do |cat| %>
-        <%= render cat %>    
-    <% end %>
-
+<div id="cats" class="grid grid-cols-4 gap-4">
+  <% @cats.each do |cat| %>
+    <%= render cat %>
+  <% end %>
 </div>
-<br>
-<br>
 <% if current_user then %>
   <%= link_to "New cat", new_cat_path %>
 <% end %>

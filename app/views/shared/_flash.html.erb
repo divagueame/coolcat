@@ -1,3 +1,6 @@
-Notice: <%= notice %>
-<br>
-Alert: <%= alert %>
+<% if notice.present? || alert.present? %>
+    <div class="">
+    <div class="px-2 py-2 bg-blue-200"><%= notice %></div>
+    <div class="bg-red-200"><%= alert %></div>
+    </div>
+<% end %>

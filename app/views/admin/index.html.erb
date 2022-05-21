@@ -1,16 +1,24 @@
-
-<h1>Admin Controller # Index</h1>
-<div id="admin-panel">
-  <h5 class="bg-slate-500">Admin mode active || <%= current_user.role %></h5>
+<div id="admin-panel" class="bg-slate-500 rounded-lg p-6">
+  <h5>Admin mode active || <%= current_user.role %></h5>
   <p>User Count: <%= User.count %></p>
-  <div class="bg-slate-100">
+  <div class="">
+    <div class="flex">
+      <div class="basis-1/4">Email</div>
+      <div class="basis-1/4">Avatar</div>
+      <div class="basis-1/4">Avatar</div>
+      <div class="basis-1/4">Avatar</div>
+    </div>
     <% User.all.each do |user|%>
-      <%= user.email %>
-      <% if (user.avatar).present? %>
-        <%= image_tag user.avatar.variant(:thumb) %>
-      <% end %>
-      <br>
+      <div class="flex my-1">
+        <div class="basis-1/4"><%= user.email %></div>
+        <div class="basis-1/4"><% user.cats.count %></div>
+        <div class="basis-1/4"></div>
+        <div class="basis-1/4">
+          <% if (user.avatar).present? %>
+            <%= image_tag user.avatar.variant(:thumb), :class=>"rounded-lg" %>
+          <% end %>
+        </div>
+      </div>
     <% end %>
-    <br>
   </div>
 </div>
