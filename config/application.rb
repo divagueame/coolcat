@@ -12,7 +12,7 @@ module Coolcat
     config.load_defaults 7.0
 
 
-    config.active_record.verify_foreign_keys_for_fixtures = false
+    # config.active_record.verify_foreign_keys_for_fixtures = false
 
     
     # Optional Img converter
