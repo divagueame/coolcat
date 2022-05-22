@@ -5,8 +5,7 @@
   <div class="ml-auto">
     <% if current_user %>
       <% if(current_user.avatar.present?) %>
-        <div id="header_avatar"></div>
-        <%= image_tag current_user.avatar.variant(:thumb), :class=>"rounded-full" %>
+        <%= image_tag current_user.avatar.variant(:thumb), :class=>"header_avatar rounded-full" %>
       <% end %>
 
       <p><%= current_user.role %>: <span id="user_email"><%= current_user.email %></span></p>

@@ -26,21 +26,24 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
   end
   
 
-  test "if logged in and user has avatar, it should load on header partial" do
-    sign_out users(:kitty)
-    sign_in users(:mike)
-    
-    p 'Avatar present??'
-    pp users(:mike).avatar.present?
-    pp users(:mike).avatar
-    
+  test "Users without avatar should not load avatar image" do
     get root_path
     assert_response :success
 
     assert_select '#header_partial', 1
-    assert_select '#header_avatar', 1
-    assert_select 'img', 1
+    assert_select 'img.header_avatar', 0
+  end
 
+
+  test "if logged in and user has avatar, it should load on header partial" do
+    sign_out users(:kitty)
+    sign_in users(:mike)
+
+    get root_path
+    assert_response :success
+
+    assert_select '#header_partial', 1
+    assert_select 'img.header_avatar', 1
   end
 
 end
