@@ -8,7 +8,7 @@ class User < ApplicationRecord
   after_initialize :set_default_role, :if => :new_record?
 
   has_one_attached :avatar do |attachable|
-    attachable.variant :thumb, resize_to_limit: [100, 100]
+    attachable.variant :thumb, resize_to_fill: [55, 55]
   end
   
   has_many :cats, dependent: :destroy

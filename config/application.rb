@@ -11,6 +11,10 @@ module Coolcat
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+
+    config.active_record.verify_foreign_keys_for_fixtures = false
+
+    
     # Optional Img converter
     # config.active_storage.variant_processor = :mini_magick
     

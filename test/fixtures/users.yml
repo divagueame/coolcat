@@ -14,3 +14,9 @@ chiki:
   id: 3
   email: 'chiki@chiki.com'
   role: user
+
+# Mike has avatar picture fixture
+mike:
+  email: 'mike@mike.com'
+  role: user
+  

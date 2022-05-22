@@ -1,0 +1,2 @@
+# active_storage/blobs.yml
+mike_avatar_blob: <%= ActiveStorage::FixtureSet.blob filename: "test_cat.jpg", service_name: "test_fixtures" %>
