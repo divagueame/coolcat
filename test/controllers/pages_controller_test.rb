@@ -38,12 +38,12 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
   test "if logged in and user has avatar, it should load on header partial" do
     sign_out users(:kitty)
     sign_in users(:mike)
-
+    
     get root_path
     assert_response :success
-
+    
     assert_select '#header_partial', 1
     assert_select 'img.header_avatar', 1
   end
-
+  
 end
