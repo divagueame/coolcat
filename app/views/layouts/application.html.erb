@@ -14,7 +14,8 @@
   <body>
     <%= render 'partials/header' %>
     <%= render 'shared/flash' %>
-    <div class="container  mt-2">
+      <%= yield :admin %>
+    <div class="container mt-2">
       <%= yield %>
     </div>
   </body>

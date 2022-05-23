@@ -1,3 +1,5 @@
+<% content_for :admin do %>
+
 <div id="admin-panel" class="bg-slate-500 rounded-lg p-6">
   <h5>Admin mode active || <%= current_user.role %></h5>
   <p>User Count: <%= User.count %></p>
@@ -22,3 +24,5 @@
     <% end %>
   </div>
 </div>
+
+<% end %>
