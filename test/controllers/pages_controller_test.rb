@@ -46,4 +46,5 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_select 'img.header_avatar', 1
   end
   
+
 end
