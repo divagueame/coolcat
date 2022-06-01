@@ -27,5 +27,15 @@
     .btnchi {
       @apply rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium    
     }
+
+    .btn {
+      @apply rounded-lg py-3 px-5 bg-purple-100 inline-block font-medium  hover:bg-purple-200
+    }
+    .cat-card {
+      @apply rounded-lg px-10 py-4 flex bg-purple-100 inline-block font-medium  hover:bg-purple-200
+    }
+    .action_btn {
+      @apply w-5
+    }
   }
   
