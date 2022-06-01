@@ -3,7 +3,7 @@
     <h1><%= current_user.email %></h1>
     <p>Cats: <%= current_user.cats.count %></p>
   </div>
-  <% current_user.cats.each do |cat| %>
+  <% @cats.each do |cat| %>
     <%= turbo_frame_tag cat do %>
       <div class="cat-card">
         <b><%= cat.name %></b>

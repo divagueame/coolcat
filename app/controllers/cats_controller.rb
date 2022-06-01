@@ -36,7 +36,8 @@ class CatsController < ApplicationController
   def update
     respond_to do |format|
       if @cat.update(cat_params)
-        format.html { redirect_to cat_url(@cat), notice: "Cat was successfully updated." } 
+        format.turbo_stream { redirect_to profile_index_path }
+        # format.html { redirect_to cat_url(@cat), notice: "Cat was successfully updated." } 
       else
         format.html { render :edit, status: :unprocessable_entity } 
       end
