@@ -20,7 +20,7 @@
     }
     a {
       @apply text-blue-600 ;
-    }
+    } 
   }
   
   @layer components {
@@ -32,10 +32,16 @@
       @apply rounded-lg py-3 px-5 bg-purple-100 inline-block font-medium  hover:bg-purple-200
     }
     .cat-card {
-      @apply rounded-lg px-10 py-4 flex bg-purple-100 inline-block font-medium  hover:bg-purple-200
+      @apply rounded-lg px-10 py-2 flex items-center bg-purple-100 inline-block font-medium hover:bg-purple-200
     }
     .action_btn {
       @apply w-5
     }
   }
   
+
+  turbo-frame {
+    display: block;
+    border: 1px solid rgb(255, 217, 0);
+    border-radius: 5px;
+  }

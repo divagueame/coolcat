@@ -1,22 +1,23 @@
 <div class="mt-8">
-    <div class="profile-card mb-2">
-        <h1><%= current_user.email %></h1>
-        <p>Cats: <%= current_user.cats.count %></p>
-    </div>
-
-    <% current_user.cats.each do |cat| %>
-        <div class="cat-card mb-2">
-                <b><%= cat.name %></b>
-                <div class="ml-auto flex gap-2">
-                    <%= link_to edit_cat_path(cat) do %>
-                        <%= image_tag 'edit', class: "action_btn" %>
-                    <% end %>
-                    <%= link_to edit_cat_path(cat) do %>
-                        <%= image_tag 'delete', class: "action_btn" %>
-                    <% end %>
-                </div>
+  <div class="profile-card mb-2">
+    <h1><%= current_user.email %></h1>
+    <p>Cats: <%= current_user.cats.count %></p>
+  </div>
+  <% current_user.cats.each do |cat| %>
+    <%= turbo_frame_tag cat do %>
+      <div class="cat-card">
+        <b><%= cat.name %></b>
+        <div class="ml-auto flex gap-2 items-center">
+          <%= link_to edit_cat_path(cat) do %>
+            <%= image_tag 'edit', class: "action_btn" %>
+          <% end %>
+          <%= button_to cat_path(cat), method: :delete do %>
+            <%= image_tag 'delete', class: "action_btn inline-block" %>
+          <% end %>
         </div>
+      </div>
     <% end %>
-    <br>
-    <%= button_to 'Add another cat', new_cat_path, class: 'btn' %>
+  <% end %>
+  <br>
+  <%= link_to 'Add another cat', new_cat_path, class: 'btn' %>
 </div>

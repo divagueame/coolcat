@@ -5,12 +5,7 @@ class ProfileControllerTest < ActionDispatch::IntegrationTest
     sign_in users(:kitty)
   end
   
-  test "should get index if logged in" do
-    get profile_index_url
-    assert_response :success
-  end
-  
-  test 'should redirec to sign up if NOT logged in' do
+  test 'should redirect to sign up if NOT logged in' do
     sign_out users(:kitty)
     get profile_index_url
 
@@ -26,4 +21,11 @@ class ProfileControllerTest < ActionDispatch::IntegrationTest
     assert_select '#header_partial .user_profile_link', 1
   end
 
+  test 'user should see as many cat cards as cats has' do
+    get profile_index_url
+    assert_response :success
+
+    assert_select '.cat-card', 2
+  end
+  
 end

@@ -18,9 +18,9 @@ class CatsController < ApplicationController
 
   # GET /cats/1/edit
   def edit
+    @images_field_disabled = true
   end
 
-  # POST /cats or /cats.json
   def create
     @cat = Cat.new(cat_params)
     @cat.user_id = current_user.id
@@ -33,7 +33,6 @@ class CatsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /cats/1 or /cats/1.json
   def update
     respond_to do |format|
       if @cat.update(cat_params)
@@ -44,7 +43,6 @@ class CatsController < ApplicationController
     end
   end
 
-  # DELETE /cats/1 or /cats/1.json
   def destroy
     @cat.destroy
 
