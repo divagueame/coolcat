@@ -35,11 +35,11 @@ class CatsControllerTest < ActionDispatch::IntegrationTest
     assert_difference("Cat.count") do
       post cats_path, params: { 
         cat: {
-          name: 'Chuki'
+          name: 'Chaski'
         }
       }
     end
-
+    
     assert_redirected_to cat_url(Cat.last)
     assert_equal flash[:notice], 'Cat was successfully created.'
   end
