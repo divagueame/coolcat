@@ -4,19 +4,26 @@ kitty:
   id: 1
   email: 'kitty@kitty.com'
   role: user
+  confirmed_at: <%= Time.zone.now - 1.hour %>
+  confirmation_sent_at: <%= Time.zone.now - 2.hours %>
 
 admin:
   id: 2
   email: 'admin@admin.com'
   role: :admin
+  confirmed_at: <%= Time.zone.now - 1.hour %>
+  confirmation_sent_at: <%= Time.zone.now - 2.hours %>
 
 chiki: 
   id: 3
   email: 'chiki@chiki.com'
   role: user
+  confirmed_at: <%= Time.zone.now - 1.hour %>
+  confirmation_sent_at: <%= Time.zone.now - 2.hours %>
 
 # Mike has avatar picture fixture
 mike:
   email: 'mike@mike.com'
   role: user
-  
+  confirmed_at: <%= Time.zone.now - 1.hour %>
+  confirmation_sent_at: <%= Time.zone.now - 2.hours %>
