@@ -1,6 +1,6 @@
 <div class="mt-8">
   <div class="profile-card mb-2">
-    <h1><%= current_user.email %></h1>
+    <h1><%= avatar %><%= current_user.email %></h1>
     <p>Cats: <%= current_user.cats.count %></p>
   </div>
   <% @cats.each do |cat| %>

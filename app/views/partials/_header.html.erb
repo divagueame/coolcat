@@ -5,11 +5,7 @@
   <div class="ml-auto flex gap-2 items-center">
     <% if current_user %>
       <div>
-        <% if(current_user.avatar.present?) %>
-          <%= link_to profile_index_path, class: "user_profile_link" do %>
-            <%= image_tag current_user.avatar.variant(:thumb), :class=>"header_avatar rounded-full inline" %>
-          <% end %>
-        <% end %>
+      <%= avatar_link %>
       </div>
         <div>
           <div></div><%= current_user.role %> | <span id="user_email"><%= current_user.email %></span>
