@@ -19,5 +19,5 @@
     <% end %>
   <% end %>
   <br>
-  <%= link_to 'Add another cat', new_cat_path, class: 'btn' %>
+  <%= link_to 'Add another cat', new_cat_path, data: { turbo_frame: 'modal'}, class: 'btn' %>
 </div>

@@ -1,5 +1,7 @@
 <%= turbo_frame_tag @cat do %>
-  <%= render "form", cat: @cat %> 
+  <%= turbo_frame_tag 'modal' do %>
+    <%= render "form", cat: @cat %> 
+  <% end %>
   <%= link_to profile_index_path do %>
     <%= image_tag 'back', class: "action_btn inline-block", alt: 'Whatever..' %>
   <% end %>

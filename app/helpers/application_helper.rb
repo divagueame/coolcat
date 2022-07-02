@@ -16,4 +16,5 @@ module ApplicationHelper
         avatar
       end
   end
+  
 end
