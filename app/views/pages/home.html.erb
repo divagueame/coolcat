@@ -2,9 +2,11 @@
   <% if current_user.cats.count==0 %>
     <%= link_to 'Add your first kitty', new_cat_path %>
   <% else %>
+  <div class="flex gap-2 mt-2">
     <% current_user.cats.each do |cat| %>
       <%= render cat %>
     <% end %>
+  </div>
   <% end %>
 <% else %>
   <div class="flex justify-center gap-10 mt-24">
