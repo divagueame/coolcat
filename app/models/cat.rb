@@ -4,6 +4,6 @@ class Cat < ApplicationRecord
 
   has_many_attached :images do |image|
     # image.variant :basic, resize_to_limit: [150, 150]
-    image.variant :basic, resize_to_fill: [150, nil]
+    image.variant :basic, resize_to_fill: [220, nil]
   end
 end

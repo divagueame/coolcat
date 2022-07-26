@@ -1,14 +1,12 @@
-<div id="<%= dom_id cat %>" class="rounded-xl bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500">
-  <div class="bg-white m-0.5 rounded-xl">
+<div id="<%= dom_id cat %>" class="w-96 mx-auto">
     <% if cat.images.attached? %>
       <% cat.images.each_with_index  do |image, i|%>
         <% if(i==0)then %>
-          <%= image_tag image.variant(:basic), :class=>"rounded-xl" %>
+          <%= image_tag image.variant(:basic), :class=>"rounded-xl mx-auto" %>
         <%end%>
       <% end %>
     <% end %>
     <h3 class="text-xl p-3 text-center">
       <%= cat.name %>
     </h3>
-  </div>
 </div>

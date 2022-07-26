@@ -1,9 +1,8 @@
 <h1>New cat</h1>
-<%= turbo_frame_tag 'modal' do %>
-  <%= tag.div data: { controller: "turbo-modal" }, style: "padding: 30px;" do %>
-    <h1 class="font-bold text-4xl">New cat</h1>
+<%= turbo_frame_tag 'modal', class: 'relative' do %>
+  <%= tag.div data: { controller: "turbo-modal" }, class: "p-8"  do %>
     <%= render "form", cat: @cat %>
-    <%= button_tag "Close", data: { action: "turbo-modal#hideModal" }, type: "button", class: "rounded-lg py-3 px-5 bg-red-600 text-white" %>
+    <%= button_tag "x", data: { action: "turbo-modal#hideModal" }, type: "button", class: "absolute top-2 right-2 py-3 px-5 " %>
   <% end %>
   
 <% end %>

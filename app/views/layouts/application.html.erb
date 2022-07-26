@@ -12,7 +12,7 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
   <body>
-    <%= turbo_frame_tag 'modal' %>
+    <%= turbo_frame_tag 'modal', class:"bg-white drop-shadow" %>
     <%= render 'partials/header' %>
     <%= render 'shared/flash' %>
       <%= yield :admin %>
