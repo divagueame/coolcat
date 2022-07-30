@@ -48,9 +48,15 @@ a{
   #modal {
     position: absolute;
     z-index: 2;
-    left: 10px;
-    top: 10px;
-    width: 40vw;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
     word-break: break-word;
     border-radius: 6px;
+  }
+  .cat-form {
+    padding: 2rem;
+    margin: 2rem;
+    background-color: rgb(195, 255, 180);
+    border-radius: 3px;
   }

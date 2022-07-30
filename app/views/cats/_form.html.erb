@@ -1,5 +1,5 @@
+  <div class="cat-form">
     <%= form_with(model: cat ) do |form| %>
-
       <% if cat.errors.any? %>
         <div style="color: red">
           <h2><%= pluralize(cat.errors.count, "error") %> prohibited this cat from being saved:</h2>
@@ -11,10 +11,11 @@
           </ul>
         </div>
       <% end %>
- 
+  
         <%= form.label :name %>
         <%= form.text_field :name, class: 'w-full px-4 py-2 rounded-lg border border-gray-300 outline-none focus:border-gray-400' %>
         <%= form.file_field :images, multiple: true unless @images_field_disabled %>
         <%= form.submit :class => 'btn' %>
  
     <% end %> 
+  </div>
